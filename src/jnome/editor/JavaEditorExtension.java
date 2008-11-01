@@ -11,7 +11,7 @@ import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.MemberVariable;
 import chameleon.editor.ChameleonEditorExtension;
-import chameleon.support.member.simplename.SimpleNameSignature;
+import chameleon.support.member.simplename.SimpleNameMethodSignature;
 import chameleon.tool.ToolExtension;
 
 /**
@@ -23,8 +23,8 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
     public String getLabel(Element element) {
   		String result;
             if (element instanceof Method) {
-                Method<Method,MethodSignature> method = (Method<Method,MethodSignature>)element;
-                result = ((SimpleNameSignature)method.signature()).getName();
+                Method<? extends Method,MethodSignature> method = (Method<? extends Method,MethodSignature>)element;
+                result = ((SimpleNameMethodSignature)method.signature()).getName();
                 List<FormalParameter> params = method.getParameters();
                 if (params.size()>0) {
                     result += "(";
