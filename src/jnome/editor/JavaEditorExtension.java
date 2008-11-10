@@ -9,7 +9,7 @@ import chameleon.core.namespace.Namespace;
 import chameleon.core.namespacepart.NamespacePart;
 import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
-import chameleon.core.variable.MemberVariable;
+import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.ChameleonEditorExtension;
 import chameleon.support.member.simplename.SimpleNameMethodSignature;
 import chameleon.tool.ToolExtension;
@@ -37,8 +37,8 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
                     }
                     result += ")";
                 }
-            } else if (element instanceof MemberVariable) {
-                result = ((MemberVariable)element).getName();
+            } else if (element instanceof RegularMemberVariable) {
+                result = ((RegularMemberVariable)element).getName();
             } else if (element instanceof Type) {
                 result = ((Type)element).getName();
             } else if (element instanceof NamespacePart) {
