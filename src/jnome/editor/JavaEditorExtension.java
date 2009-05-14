@@ -4,6 +4,7 @@ import java.util.List;
 
 import chameleon.core.element.Element;
 import chameleon.core.method.Method;
+import chameleon.core.method.MethodHeader;
 import chameleon.core.method.MethodSignature;
 import chameleon.core.namespace.Namespace;
 import chameleon.core.namespacepart.NamespacePart;
@@ -23,7 +24,7 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
     public String getLabel(Element element) {
   		String result;
             if (element instanceof Method) {
-                Method<? extends Method,MethodSignature> method = (Method<? extends Method,MethodSignature>)element;
+                Method<? extends Method, ? extends MethodHeader, ? extends MethodSignature> method = (Method<? extends Method, ? extends MethodHeader, ? extends MethodSignature>)element;
                 result = ((SimpleNameMethodSignature)method.signature()).getName();
                 List<FormalParameter> params = method.getParameters();
                 if (params.size()>0) {
