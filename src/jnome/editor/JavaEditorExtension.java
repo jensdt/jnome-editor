@@ -25,7 +25,7 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
   		String result;
             if (element instanceof Method) {
                 Method<? extends Method, ? extends MethodHeader, ? extends MethodSignature> method = (Method<? extends Method, ? extends MethodHeader, ? extends MethodSignature>)element;
-                result = ((SimpleNameMethodSignature)method.signature()).getName();
+                result = method.name();
                 List<FormalParameter> params = method.getParameters();
                 if (params.size()>0) {
                     result += "(";
