@@ -24,7 +24,7 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
     public String getLabel(Element element) {
   		String result;
             if (element instanceof Method) {
-                Method<? extends Method, ? extends MethodHeader, ? extends MethodSignature> method = (Method<? extends Method, ? extends MethodHeader, ? extends MethodSignature>)element;
+                Method<? , ? , ? ,?> method = (Method<? , ? , ?,? >)element;
                 result = method.name();
                 List<FormalParameter> params = method.getParameters();
                 if (params.size()>0) {
@@ -43,7 +43,7 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
             } else if (element instanceof Type) {
                 result = ((Type)element).getName();
             } else if (element instanceof NamespacePart) {
-            	Namespace namespace = ((NamespacePart)element).getDeclaredNamespace();
+            	Namespace namespace = ((NamespacePart)element).namespace();
             	if(namespace != null) {
             		result = namespace.getFullyQualifiedName();
             	} else {
