@@ -13,7 +13,7 @@ import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.ChameleonEditorExtension;
 import chameleon.support.member.simplename.SimpleNameMethodSignature;
-import chameleon.tool.ToolExtension;
+import chameleon.tool.Connector;
 
 /**
  * @author Marko van Dooren
@@ -26,7 +26,7 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
             if (element instanceof Method) {
                 Method<? , ? , ? ,?> method = (Method<? , ? , ?,? >)element;
                 result = method.name();
-                List<FormalParameter> params = method.getParameters();
+                List<FormalParameter> params = method.formalParameters();
                 if (params.size()>0) {
                     result += "(";
                     for (int i = 0;i<params.size();i++) {
@@ -55,7 +55,7 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
         return result;
     }
 
-    public ToolExtension clone() {
+    public Connector clone() {
         return new JavaEditorExtension();
     }
 
