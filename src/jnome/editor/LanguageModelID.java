@@ -1,11 +1,14 @@
 package jnome.editor;
 
+import java.io.IOException;
+
 import jnome.core.language.Java;
 import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
 import chameleon.editor.toolextension.EclipseBootstrapper;
 import chameleon.input.ModelFactory;
+import chameleon.input.ParseException;
 import chameleon.output.Syntax;
 
 public class LanguageModelID implements EclipseBootstrapper {
@@ -34,7 +37,7 @@ public class LanguageModelID implements EclipseBootstrapper {
 		return new JavaCodeWriter();
 	}
 
-	public Language createLanguage() {
+	public Language createLanguage() throws IOException, ParseException {
 		Language result = new Java();
 		ModelFactory factory = new JavaModelFactory();
 		factory.setLanguage(result, ModelFactory.class);
