@@ -1,4 +1,4 @@
-package org.jnome;
+package jnome;
 
 import java.io.IOException;
 
