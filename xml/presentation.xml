@@ -28,7 +28,7 @@
 		<background>#FFFFFF</background>
 		<bold />
 	</stylerule>
-	<stylerule element="*" decorator="__AccessType"  description="Access Modifiers">
+	<stylerule element="*" decorator="__Reference"  description="Cross References">
 		<foreground>#A000E0</foreground>
 		<background>#FFFFFF</background>
 		<bold />
