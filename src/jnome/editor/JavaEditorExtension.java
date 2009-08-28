@@ -11,7 +11,8 @@ import chameleon.core.namespacepart.NamespacePart;
 import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
-import chameleon.editor.ChameleonEditorExtension;
+import chameleon.editor.connector.ChameleonEditorExtension;
+import chameleon.editor.project.ChameleonProjectNature;
 import chameleon.support.member.simplename.SimpleNameMethodSignature;
 import chameleon.tool.Connector;
 
@@ -21,7 +22,11 @@ import chameleon.tool.Connector;
  */
 public class JavaEditorExtension extends ChameleonEditorExtension {
 	
-    public String getLabel(Element element) {
+//    public JavaEditorExtension(ChameleonProjectNature nature) {
+//		 super(nature);
+//	  }
+
+		public String getLabel(Element element) {
   		String result;
             if (element instanceof Method) {
                 Method<? , ? , ? ,?> method = (Method<? , ? , ?,? >)element;
