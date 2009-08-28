@@ -5,18 +5,15 @@
 		<bold />
 	</stylerule>
 	
-	<stylerule element="chameleon.core.expression.RegularLiteral" decorator="__ALL" description="Literals">
+	<stylerule element="chameleon.support.expression.RegularLiteral" decorator="__ALL" description="Literals">
 		<foreground>#0000FF</foreground>
 		<background>#FFFFFF</background>
 	</stylerule>	
 	
-	<stylerule element="org.jnome.mm.type.JavaClass" decorator="__ALL" description="Classes">
+	<stylerule element="chameleon.core.type.Type" decorator="__ALL" description="Classes">
 		<foldable />
 	</stylerule>
-	<stylerule element="chameleon.core.method.RegularMethod" decorator="__ALL" description="Methods">
-		<foldable />
-	</stylerule>
-	<stylerule element="chameleon.core.method.Constructor" decorator="__ALL" description="Constructors">
+	<stylerule element="chameleon.core.method.Method" decorator="__ALL" description="Methods">
 		<foldable />
 	</stylerule>	
 	
@@ -38,14 +35,10 @@
 	</stylerule>		
 
 	<outline>
-		<element default="visible" description="Classes">JavaClass</element>
-		<element default="visible" description="Inner Classes">JavaInnerClass</element>
-		<element default="visible" description="Constructors">Constructor</element>
+		<element default="visible" description="Classes">Type</element>
 		<element default="hidden" description="Compilation Units">CompilationUnit</element>
 		<element default="visible" description="Packages">NamespacePart</element>
 		<element default="visible" description="Variables">MemberVariable</element>
-		<element default="visible" description="Methods">RegularMethod</element>
-
-		
+		<element default="visible" description="Methods">Method</element>
 	</outline>
 </presentationmodel>
