@@ -1,8 +1,9 @@
-package jnome.editor;
+package org.jnome;
 
 import java.io.IOException;
 
 import jnome.core.language.Java;
+import jnome.editor.JavaEditorExtension;
 import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
