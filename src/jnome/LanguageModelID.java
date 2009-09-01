@@ -40,8 +40,8 @@ public class LanguageModelID implements EclipseBootstrapper {
 	}
 
 	public Language createLanguage() throws IOException, ParseException {
-		Language result = new Java();
-		ModelFactory factory = new JavaModelFactory();
+		Java result = new Java();
+		ModelFactory factory = new JavaModelFactory(result);
 		factory.setLanguage(result, ModelFactory.class);
 		result.setConnector(ChameleonEditorExtension.class, new JavaEditorExtension());
 		return result;
