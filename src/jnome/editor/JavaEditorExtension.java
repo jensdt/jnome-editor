@@ -1,19 +1,27 @@
 package jnome.editor;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import jnome.core.modifier.Default;
 import chameleon.core.element.Element;
 import chameleon.core.method.Method;
-import chameleon.core.method.MethodHeader;
-import chameleon.core.method.MethodSignature;
+import chameleon.core.modifier.Modifier;
 import chameleon.core.namespace.Namespace;
 import chameleon.core.namespacepart.NamespacePart;
 import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.connector.ChameleonEditorExtension;
-import chameleon.editor.project.ChameleonProjectNature;
-import chameleon.support.member.simplename.SimpleNameMethodSignature;
+import chameleon.support.modifier.Abstract;
+import chameleon.support.modifier.Constructor;
+import chameleon.support.modifier.Final;
+import chameleon.support.modifier.Interface;
+import chameleon.support.modifier.Native;
+import chameleon.support.modifier.Private;
+import chameleon.support.modifier.Protected;
+import chameleon.support.modifier.Public;
+import chameleon.support.modifier.Static;
 import chameleon.tool.Connector;
 
 /**
@@ -63,5 +71,37 @@ public class JavaEditorExtension extends ChameleonEditorExtension {
     public Connector clone() {
         return new JavaEditorExtension();
     }
+
+      @Override
+      public List<Modifier> getFilterModifiers() {
+              List<Modifier> result = new ArrayList<Modifier>();
+              result.add(new Private());
+              result.add(new Protected());
+              result.add(new Public());
+              result.add(new Default());
+              result.add(new Static());
+              result.add(new Final());
+              result.add(new Abstract());
+              result.add(new Constructor());
+              result.add(new Interface());
+              result.add(new Native());
+              return result;
+      }
+
+		@Override
+		public String getMethodTemplatePattern(Method method) {
+      String methodName = method.name();
+      String patternString = methodName+"(";
+      List<FormalParameter> parameters = method.formalParameters();
+      for(FormalParameter param : parameters){
+              patternString += "${" + param.getName() + "}, ";
+      }
+      if(parameters.size()>0){
+              // remove last comma added:
+              patternString = patternString.substring(0, patternString.length()-2);
+      }
+      patternString += ")";
+      return patternString;
+		}
 
 }
