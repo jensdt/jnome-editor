@@ -17,19 +17,25 @@
 		<foldable />
 	</stylerule>	
 	
-	<stylerule element="*" decorator="__Type" description="Types">
+	<stylerule element="*" decorator="__MODIFIER" description="Modifier">
 		<foreground>#000000</foreground>
 		<background>#FFFFFF</background>
 		<italic />
 	</stylerule>
 	
-	<stylerule element="*" decorator="__Codeword"  description="Keywords">
-		<foreground>#A000E0</foreground>
+	<stylerule element="*" decorator="__KEYWORD"  description="Keywords">
+		<foreground>#820759</foreground>
 		<background>#FFFFFF</background>
 		<bold />
 	</stylerule>
-	<stylerule element="*" decorator="__Reference"  description="Cross References">
+	<stylerule element="*" decorator="__CROSS_REFERENCE"  description="Cross References">
 		<foreground>#A000E0</foreground>
+		<background>#FFFFFF</background>
+		<bold />
+	</stylerule>		
+
+	<stylerule element="*" decorator="__PRIMITIVE"  description="Primitive Types">
+		<foreground>#A0A0E0</foreground>
 		<background>#FFFFFF</background>
 		<bold />
 	</stylerule>		
@@ -39,6 +45,6 @@
 		<element default="hidden" description="Compilation Units">CompilationUnit</element>
 		<element default="visible" description="Packages">NamespacePart</element>
 		<element default="visible" description="Variables">MemberVariable</element>
-		<element default="visible" description="Methods">Method</element>
+		<element default="visible" description="Methods">RegularMethod</element>
 	</outline>
 </presentationmodel>
