@@ -47,4 +47,21 @@
 		<element default="visible" description="Variables">MemberVariable</element>
 		<element default="visible" description="Methods">RegularMethod</element>
 	</outline>
+	
+  <indentation>
+    <element default="false" description="Packages">NamespacePart</element>
+    <element default="true" description="Classes">JavaClass</element>
+    <element default="true" description="Inner Classes">JavaInnerClass</element>
+    <element default="true" description="Anonymous Inner Types">AnonymousInnerType</element>
+    <element default="true" description="Constructors">Constructor</element>
+    <element default="true" description="Methods">RegularMethod</element>
+    <element default="true" description="For Statement">ForStatement</element>
+    <element default="true" description="While Statement">WhileStatement</element>
+    <element default="true" description="Do Statement">DoStatement</element>
+    <element default="true" description="Try Statements">TryStatement</element>
+    <element default="true" description="Synchronized Statement">SynchronizedStatement</element>
+    <element default="true" description="If Then Else Statement">IfThenElseStatement</element>
+    <element default="true" description="Block">Block</element>
+  </indentation>
+	
 </presentationmodel>
