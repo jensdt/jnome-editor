@@ -11,7 +11,7 @@
 	</stylerule>	
 	
 	<stylerule element="chameleon.core.type.Type" decorator="__ALL" description="Classes">
-		<foldable />
+		<foldable/>
 	</stylerule>
 	<stylerule element="chameleon.core.method.Method" decorator="__ALL" description="Methods">
 		<foldable />
