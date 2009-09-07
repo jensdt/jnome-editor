@@ -7,7 +7,7 @@ import jnome.editor.JavaEditorExtension;
 import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
-import chameleon.editor.connector.ChameleonEditorExtension;
+import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.editor.connector.EclipseBootstrapper;
 import chameleon.input.ModelFactory;
 import chameleon.input.ParseException;
@@ -43,7 +43,7 @@ public class LanguageModelID implements EclipseBootstrapper {
 		Java result = new Java();
 		ModelFactory factory = new JavaModelFactory(result);
 		factory.setLanguage(result, ModelFactory.class);
-		result.setConnector(ChameleonEditorExtension.class, new JavaEditorExtension());
+		result.setConnector(EclipseEditorExtension.class, new JavaEditorExtension());
 		return result;
 	}
 

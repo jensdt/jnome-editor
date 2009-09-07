@@ -12,7 +12,7 @@ import chameleon.core.namespacepart.NamespacePart;
 import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
-import chameleon.editor.connector.ChameleonEditorExtension;
+import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
 import chameleon.support.modifier.Final;
@@ -28,7 +28,7 @@ import chameleon.tool.Connector;
  * @author Marko van Dooren
  * @author Koen Vanderkimpen
  */
-public class JavaEditorExtension extends ChameleonEditorExtension {
+public class JavaEditorExtension extends EclipseEditorExtension {
 	
 //    public JavaEditorExtension(ChameleonProjectNature nature) {
 //		 super(nature);
