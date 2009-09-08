@@ -10,10 +10,10 @@
 		<background>#FFFFFF</background>
 	</stylerule>	
 	
-	<stylerule element="chameleon.core.type.Type" decorator="__ALL" description="Classes">
+	<stylerule element="chameleon.core.type.RegularType" decorator="__ALL" description="Classes">
 		<foldable/>
 	</stylerule>
-	<stylerule element="chameleon.core.method.Method" decorator="__ALL" description="Methods">
+	<stylerule element="chameleon.support.member.simplename.method.NormalMethod" decorator="__ALL" description="Methods">
 		<foldable />
 	</stylerule>	
 	
