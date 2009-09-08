@@ -13,6 +13,7 @@ import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.connector.EclipseEditorExtension;
+import chameleon.editor.presentation.OutlineComparator;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
 import chameleon.support.modifier.Final;
@@ -102,6 +103,11 @@ public class JavaEditorExtension extends EclipseEditorExtension {
       }
       patternString += ")";
       return patternString;
+		}
+
+		@Override
+		public JavaDeclarationCategorizer declarationCategorizer()  {
+			return new JavaDeclarationCategorizer();
 		}
 
 }
