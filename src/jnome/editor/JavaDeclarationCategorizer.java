@@ -14,23 +14,29 @@ public class JavaDeclarationCategorizer implements DeclarationCategorizer {
 
 	public int category(Declaration declaration)  {
 		Element element = declaration;
+		int result;
 		if(element instanceof Member){
 			if(element instanceof Method){
-				if(element instanceof RegularMethod)
-					return 3;
-				if(element instanceof Operator)
-					return 4;
-				else
-					return 10;
-			} 
-			if(element instanceof Type)
-				return 5;
-			if(element instanceof MemberVariable)
-				return 1;
-			else
-				return 20;
+				if(element instanceof RegularMethod) {
+					result = 3;
+				}
+				if(element instanceof Operator) {
+					result = 4;
+				}
+				else {
+					result = 10;
+				}
+			} else if(element instanceof Type) {
+				result = 5;
+			} else if(element instanceof MemberVariable) {
+				result = 1;
+			}	else {
+				result = 20;
+			}
+		} else {
+			result = 30;
 		}
-		return 30;
+		return result;
 	}
 
 }
