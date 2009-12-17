@@ -1,12 +1,2 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Jnome Editor
-Bundle-SymbolicName: Jnome_Editor;singleton:=true
-Bundle-Version: 1.0.0
 Require-Bundle: ChameleonEditor;bundle-version="1.1.0",
  org.eclipse.swt;bundle-version="3.5.0"
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bundle-ClassPath: bin/.,
- .,
- lib/jnome.jar
-Bundle-Vendor: K.U.Leuven
