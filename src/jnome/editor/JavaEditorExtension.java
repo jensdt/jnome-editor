@@ -13,6 +13,7 @@ import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.connector.EclipseEditorExtension;
+import org.eclipse.swt.graphics.Image;
 import chameleon.editor.presentation.OutlineComparator;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
@@ -108,6 +109,11 @@ public class JavaEditorExtension extends EclipseEditorExtension {
 		@Override
 		public JavaDeclarationCategorizer declarationCategorizer()  {
 			return new JavaDeclarationCategorizer();
+		}
+
+		@Override
+		public Image getIcon(Element modelObject) {
+			return null;
 		}
 
 }
