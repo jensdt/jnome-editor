@@ -9,3 +9,4 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ClassPath: bin/.,
  .,
  lib/jnome.jar
+Bundle-Vendor: K.U.Leuven
