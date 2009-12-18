@@ -1,2 +1,12 @@
-Require-Bundle: ChameleonEditor;bundle-version="1.1.0",
- org.eclipse.swt;bundle-version="3.5.0"
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Chameleon Java Plugin
+Bundle-SymbolicName: be.chameleon.eclipse.java;singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: org.eclipse.swt;bundle-version="3.5.0",
+ be.chameleon.eclipse.core;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: bin/.,
+ .,
+ lib/jnome.jar
+Bundle-Vendor: K.U.Leuven
