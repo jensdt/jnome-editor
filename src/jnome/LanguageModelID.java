@@ -7,11 +7,10 @@ import jnome.editor.JavaEditorExtension;
 import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
-import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.editor.connector.EclipseBootstrapper;
+import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.input.ModelFactory;
 import chameleon.input.ParseException;
-import chameleon.oo.language.ObjectOrientedLanguage;
 import chameleon.output.Syntax;
 
 public class LanguageModelID implements EclipseBootstrapper {
@@ -41,7 +40,7 @@ public class LanguageModelID implements EclipseBootstrapper {
 	}
 
 	public Language createLanguage() throws IOException, ParseException {
-		ObjectOrientedLanguage result = new Java();
+		Java result = new Java();
 		ModelFactory factory = new JavaModelFactory(result);
 		factory.setLanguage(result, ModelFactory.class);
 		result.setConnector(EclipseEditorExtension.class, new JavaEditorExtension());

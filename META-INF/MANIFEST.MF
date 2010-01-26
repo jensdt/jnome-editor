@@ -8,5 +8,20 @@ Require-Bundle: org.eclipse.swt;bundle-version="3.5.0",
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ClassPath: bin/.,
  .,
- lib/jnome.jar
+ lib/jnome.jar,
+ lib/antlr-3.2.jar
 Bundle-Vendor: K.U.Leuven
+Export-Package: jnome,
+ jnome.core.decorator,
+ jnome.core.enumeration,
+ jnome.core.expression,
+ jnome.core.language,
+ jnome.core.modifier,
+ jnome.core.type,
+ jnome.core.variable,
+ jnome.editor,
+ jnome.input,
+ jnome.input.parser,
+ jnome.output,
+ jnome.test,
+ jnome.tool
