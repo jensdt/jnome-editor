@@ -42,8 +42,8 @@ public class JavaEditorExtension extends EclipseEditorExtension {
                 Method<? , ? , ? ,?> method = (Method<? , ? , ?,? >)element;
                 result = method.name();
                 List<FormalParameter> params = method.formalParameters();
+                result += "(";
                 if (params.size()>0) {
-                    result += "(";
                     for (int i = 0;i<params.size();i++) {
                         FormalParameter p = params.get(i);
                         result += p.getTypeReference().getName();
@@ -51,8 +51,8 @@ public class JavaEditorExtension extends EclipseEditorExtension {
                         	result += ",";
                         }
                     }
-                    result += ")";
                 }
+                result += ")";
             } else if (element instanceof RegularMemberVariable) {
                 result = ((RegularMemberVariable)element).getName();
             } else if (element instanceof Type) {
