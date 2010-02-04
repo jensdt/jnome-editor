@@ -1,6 +1,8 @@
 package jnome;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import jnome.core.language.Java;
 import jnome.editor.JavaEditorExtension;
@@ -43,6 +45,7 @@ public class LanguageModelID implements EclipseBootstrapper {
 		Java result = new Java();
 		ModelFactory factory = new JavaModelFactory(result);
 		factory.setLanguage(result, ModelFactory.class);
+		factory.initializeBase(new ArrayList<File>());
 		result.setConnector(EclipseEditorExtension.class, new JavaEditorExtension());
 		return result;
 	}
