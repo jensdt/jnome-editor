@@ -15,10 +15,14 @@ import chameleon.input.ModelFactory;
 import chameleon.input.ParseException;
 import chameleon.output.Syntax;
 
-public class LanguageModelID implements EclipseBootstrapper {
+public class LanguageModelID extends EclipseBootstrapper {
 
 	public String getLanguageName() {
 		return "Java";
+	}
+
+	public void registerFileExtensions() {
+		addExtension("java");
 	}
 
 	public String getLanguageVersion() {
