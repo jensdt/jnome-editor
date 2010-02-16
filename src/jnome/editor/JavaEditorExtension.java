@@ -46,7 +46,7 @@ public class JavaEditorExtension extends EclipseEditorExtension {
                 if (params.size()>0) {
                     for (int i = 0;i<params.size();i++) {
                         FormalParameter p = params.get(i);
-                        result += p.getTypeReference().getName();
+                        result += p.getTypeReference().signature();
                         if (i<params.size()-1) {
                         	result += ",";
                         }
