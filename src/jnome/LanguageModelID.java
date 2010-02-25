@@ -9,6 +9,7 @@ import jnome.editor.JavaEditorExtension;
 import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
+import chameleon.editor.connector.Builder;
 import chameleon.editor.connector.EclipseBootstrapper;
 import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.input.ModelFactory;
