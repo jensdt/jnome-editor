@@ -52,6 +52,7 @@ public class LanguageModelID extends EclipseBootstrapper {
 		factory.setLanguage(result, ModelFactory.class);
 		factory.initializeBase(new ArrayList<File>());
 		result.setConnector(EclipseEditorExtension.class, new JavaEditorExtension());
+		result.setConnector(Syntax.class, new JavaCodeWriter());
 		return result;
 	}
 
