@@ -4,17 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jnome.core.modifier.Default;
+
+import org.eclipse.swt.graphics.Image;
+
 import chameleon.core.element.Element;
 import chameleon.core.method.Method;
 import chameleon.core.modifier.Modifier;
 import chameleon.core.namespace.Namespace;
 import chameleon.core.namespacepart.NamespacePart;
+import chameleon.core.type.BasicTypeReference;
 import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.connector.EclipseEditorExtension;
-import org.eclipse.swt.graphics.Image;
-import chameleon.editor.presentation.OutlineComparator;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
 import chameleon.support.modifier.Final;
@@ -46,7 +48,7 @@ public class JavaEditorExtension extends EclipseEditorExtension {
                 if (params.size()>0) {
                     for (int i = 0;i<params.size();i++) {
                         FormalParameter p = params.get(i);
-                        result += p.getTypeReference().signature();
+                        result += ((BasicTypeReference)p.getTypeReference()).signature();
                         if (i<params.size()-1) {
                         	result += ",";
                         }
