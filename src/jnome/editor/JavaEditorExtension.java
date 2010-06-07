@@ -12,11 +12,12 @@ import chameleon.core.method.Method;
 import chameleon.core.modifier.Modifier;
 import chameleon.core.namespace.Namespace;
 import chameleon.core.namespacepart.NamespacePart;
-import chameleon.core.type.BasicTypeReference;
-import chameleon.core.type.Type;
 import chameleon.core.variable.FormalParameter;
 import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.connector.EclipseEditorExtension;
+import chameleon.exception.ModelException;
+import chameleon.oo.type.Type;
+import chameleon.output.Syntax;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
 import chameleon.support.modifier.Final;
@@ -41,14 +42,19 @@ public class JavaEditorExtension extends EclipseEditorExtension {
 		public String getLabel(Element element) {
   		String result;
             if (element instanceof Method) {
-                Method<? , ? , ? ,?> method = (Method<? , ? , ?,? >)element;
+                Method<? , ? , ? ,?> method = (Method<?,?,?,? >)element;
                 result = method.name();
                 List<FormalParameter> params = method.formalParameters();
                 result += "(";
                 if (params.size()>0) {
                     for (int i = 0;i<params.size();i++) {
                         FormalParameter p = params.get(i);
-                        result += ((BasicTypeReference)p.getTypeReference()).signature();
+                        try {
+													result += element.language().connector(Syntax.class).toCode(p.getTypeReference());
+												} catch (ModelException e) {
+													// TODO Auto-generated catch block
+													e.printStackTrace();
+												}
                         if (i<params.size()-1) {
                         	result += ",";
                         }

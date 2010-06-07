@@ -5,9 +5,9 @@ import chameleon.core.element.Element;
 import chameleon.core.member.Member;
 import chameleon.core.method.Method;
 import chameleon.core.method.RegularMethod;
-import chameleon.core.type.Type;
 import chameleon.core.variable.MemberVariable;
 import chameleon.editor.presentation.DeclarationCategorizer;
+import chameleon.oo.type.Type;
 import chameleon.support.member.simplename.operator.Operator;
 
 public class JavaDeclarationCategorizer implements DeclarationCategorizer {
