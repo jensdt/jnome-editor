@@ -7,16 +7,16 @@ import jnome.core.modifier.Default;
 
 import org.eclipse.swt.graphics.Image;
 
+import chameleon.core.declaration.Declaration;
+import chameleon.core.declaration.Signature;
 import chameleon.core.element.Element;
 import chameleon.core.method.Method;
 import chameleon.core.modifier.Modifier;
 import chameleon.core.namespace.Namespace;
 import chameleon.core.namespacepart.NamespacePart;
 import chameleon.core.variable.FormalParameter;
-import chameleon.core.variable.RegularMemberVariable;
 import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.exception.ModelException;
-import chameleon.oo.type.Type;
 import chameleon.output.Syntax;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
@@ -61,11 +61,12 @@ public class JavaEditorExtension extends EclipseEditorExtension {
                     }
                 }
                 result += ")";
-            } else if (element instanceof RegularMemberVariable) {
-                result = ((RegularMemberVariable)element).getName();
-            } else if (element instanceof Type) {
-                result = ((Type)element).getName();
-            } else if (element instanceof NamespacePart) {
+            } else if (element instanceof Declaration) {
+                result = ((Declaration)element).signature().name();
+            } else if (element instanceof Signature) {
+            	return ((Signature)element).name();
+            }
+              else if (element instanceof NamespacePart) {
             	Namespace namespace = ((NamespacePart)element).namespace();
             	if(namespace != null) {
             		result = namespace.getFullyQualifiedName();
