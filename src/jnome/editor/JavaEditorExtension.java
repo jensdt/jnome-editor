@@ -1,8 +1,10 @@
 package jnome.editor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import jnome.LanguageModelID;
 import jnome.core.modifier.Default;
 
 import org.eclipse.swt.graphics.Image;
@@ -121,8 +123,12 @@ public class JavaEditorExtension extends EclipseEditorExtension {
 		}
 
 		@Override
-		public Image getIcon(Element modelObject) {
+		public Image getIcon(Element element) throws IOException {
 			return null;
+		}
+
+		public String pluginID() {
+			return LanguageModelID.PLUGIN_ID;
 		}
 
 }

@@ -18,6 +18,8 @@ import chameleon.output.Syntax;
 
 public class LanguageModelID extends EclipseBootstrapper {
 
+	public final static String PLUGIN_ID = "be.chameleon.eclipse.java";
+	
 	public String getLanguageName() {
 		return "Java";
 	}
