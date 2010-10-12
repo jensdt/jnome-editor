@@ -1,17 +1,22 @@
 package jnome;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import jnome.core.language.Java;
 import jnome.editor.JavaEditorExtension;
 import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
+import chameleon.editor.LanguageMgt;
 import chameleon.editor.connector.Builder;
 import chameleon.editor.connector.EclipseBootstrapper;
 import chameleon.editor.connector.EclipseEditorExtension;
+import chameleon.exception.ChameleonProgrammerException;
 import chameleon.input.ModelFactory;
 import chameleon.input.ParseException;
 import chameleon.output.Syntax;
@@ -52,7 +57,20 @@ public class LanguageModelID extends EclipseBootstrapper {
 		Java result = new Java();
 		ModelFactory factory = new JavaModelFactory(result);
 		factory.setLanguage(result, ModelFactory.class);
-		factory.initializeBase(new ArrayList<File>());
+
+		try {
+			FilenameFilter filter = LanguageMgt.fileNameFilter(".java");
+			URL directory = LanguageMgt.pluginURL(PLUGIN_ID, "api/");
+			List<File> files = LanguageMgt.allFiles(directory, filter);
+			System.out.println("Loading "+files.size()+" API files.");
+		  factory.initializeBase(files);
+		} catch(ChameleonProgrammerException exc) {
+			// Object and String may not be present yet.
+		}
+
+		
+//		factory.initializeBase(new ArrayList<File>());
+		
 		result.setConnector(EclipseEditorExtension.class, new JavaEditorExtension());
 		result.setConnector(Syntax.class, new JavaCodeWriter());
 		return result;
