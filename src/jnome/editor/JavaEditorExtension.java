@@ -19,7 +19,8 @@ import chameleon.core.namespacepart.NamespacePart;
 import chameleon.core.variable.FormalParameter;
 import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.exception.ModelException;
-import chameleon.output.Syntax;
+import chameleon.plugin.Plugin;
+import chameleon.plugin.output.Syntax;
 import chameleon.support.modifier.Abstract;
 import chameleon.support.modifier.Constructor;
 import chameleon.support.modifier.Final;
@@ -29,7 +30,6 @@ import chameleon.support.modifier.Private;
 import chameleon.support.modifier.Protected;
 import chameleon.support.modifier.Public;
 import chameleon.support.modifier.Static;
-import chameleon.tool.Connector;
 
 /**
  * @author Marko van Dooren
@@ -52,7 +52,7 @@ public class JavaEditorExtension extends EclipseEditorExtension {
                     for (int i = 0;i<params.size();i++) {
                         FormalParameter p = params.get(i);
                         try {
-													result += element.language().connector(Syntax.class).toCode(p.getTypeReference());
+													result += element.language().plugin(Syntax.class).toCode(p.getTypeReference());
 												} catch (ModelException e) {
 													// TODO Auto-generated catch block
 													e.printStackTrace();
@@ -81,7 +81,7 @@ public class JavaEditorExtension extends EclipseEditorExtension {
         return result;
     }
 
-    public Connector clone() {
+    public Plugin clone() {
         return new JavaEditorExtension();
     }
 

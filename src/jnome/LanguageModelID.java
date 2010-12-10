@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 import jnome.core.language.Java;
@@ -13,13 +12,12 @@ import jnome.input.JavaModelFactory;
 import jnome.output.JavaCodeWriter;
 import chameleon.core.language.Language;
 import chameleon.editor.LanguageMgt;
-import chameleon.editor.connector.Builder;
 import chameleon.editor.connector.EclipseBootstrapper;
 import chameleon.editor.connector.EclipseEditorExtension;
 import chameleon.exception.ChameleonProgrammerException;
 import chameleon.input.ModelFactory;
 import chameleon.input.ParseException;
-import chameleon.output.Syntax;
+import chameleon.plugin.output.Syntax;
 
 public class LanguageModelID extends EclipseBootstrapper {
 
@@ -71,8 +69,8 @@ public class LanguageModelID extends EclipseBootstrapper {
 		
 //		factory.initializeBase(new ArrayList<File>());
 		
-		result.setConnector(EclipseEditorExtension.class, new JavaEditorExtension());
-		result.setConnector(Syntax.class, new JavaCodeWriter());
+		result.setPlugin(EclipseEditorExtension.class, new JavaEditorExtension());
+		result.setPlugin(Syntax.class, new JavaCodeWriter());
 		return result;
 	}
 
